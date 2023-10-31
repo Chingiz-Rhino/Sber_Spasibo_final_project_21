@@ -17,6 +17,7 @@ public class GiftCertificateTest extends TestBase {
             giftCertificatePage.openGiftCertificatePage();
         });
         step("Verify Gift Certificate page", () -> {
+            giftCertificatePage.chooseCity();
             giftCertificatePage.verifyGiftCertificatePage();
         });
     }

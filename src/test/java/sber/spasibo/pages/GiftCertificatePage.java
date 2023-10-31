@@ -8,17 +8,23 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class GiftCertificatePage {
     SelenideElement
-                    giftCertificatePageTap = $(".menu-link__container"),
+                    giftCertificatePageTap = $("[href='/certificates/list']"),
 
-                    headerOfGiftCertificatePage = $(".certificates-list-page__title page__content-title");
+                    headerOfGiftCertificatePage = $(".page__content-title"),
+                    cityButton = $("[aria-label='Оставить выбранным город Москва']");
 
 
     public GiftCertificatePage openGiftCertificatePage(){
-        giftCertificatePageTap.shouldHave(exactText("Подарочные сертификаты")).click();
+        giftCertificatePageTap.shouldHave(text("Подарочные сертификаты")).click();
         return this;
     }
     public GiftCertificatePage verifyGiftCertificatePage(){
         headerOfGiftCertificatePage.shouldHave(text("Подарочные сертификаты"));
+        return this;
+    }
+
+    public GiftCertificatePage chooseCity(){
+        cityButton.click();
         return this;
     }
 }
