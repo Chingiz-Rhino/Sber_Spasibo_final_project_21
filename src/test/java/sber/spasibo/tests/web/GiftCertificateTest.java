@@ -24,14 +24,13 @@ public class GiftCertificateTest extends TestBase {
     }
 
     @Test
-    @DisplayName("Testing of Gift Certificate page opening")
+    @DisplayName("Testing Back from Gift Certificate page to main")
     void backToMainPageFromGiftCertificatePage() {
         step("Open main page", () -> {
             openWebSite();
         });
         step("Open Gift Certificate page", () -> {
             giftCertificatePage.openGiftCertificatePage();
-            giftCertificatePage.chooseCity();
         });
         step("Back from Gift Certificate page to main", () -> {
             giftCertificatePage.backToMainPage();
@@ -39,14 +38,13 @@ public class GiftCertificateTest extends TestBase {
     }
 
     @Test
-    @DisplayName("Testing of Gift Certificate page opening")
+    @DisplayName("Testing Chose Sbers Ecosystem category")
     void chooseSbersEcosystemCategory() {
         step("Open main page", () -> {
             openWebSite();
         });
         step("Open Gift Certificate page", () -> {
             giftCertificatePage.openGiftCertificatePage();
-            giftCertificatePage.chooseCity();
         });
         step("Chose Sbers Ecosystem category", () -> {
             giftCertificatePage.selectSbersEcosystemCheckBox();

@@ -3,7 +3,6 @@ package sber.spasibo.tests.web;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
 public class MobileAppPageTest extends TestBase {
