@@ -1,6 +1,5 @@
 package sber.spasibo.pages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.text;
@@ -25,7 +24,7 @@ public class PartnersPage {
         return this;
     }
     public PartnersPage verifyAllPartnersTabPage() {
-        filterListHeader.shouldHave(text("168 партнёров"));
+        filterListHeader.shouldHave(text("165 партнёров"));
         return this;
     }
 
@@ -34,7 +33,7 @@ public class PartnersPage {
         return this;
     }
     public PartnersPage verifyAccumulatePartnersCount(){
-        filterListHeader.shouldHave(text("160 партнёров"));
+        filterListHeader.shouldHave(text("157 партнёров"));
         return this;
     }
 

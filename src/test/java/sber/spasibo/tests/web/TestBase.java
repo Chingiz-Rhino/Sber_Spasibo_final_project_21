@@ -2,10 +2,7 @@ package sber.spasibo.tests.web;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
-import sber.spasibo.pages.CouponsPage;
-import sber.spasibo.pages.GiftCertificatePage;
-import sber.spasibo.pages.MobileAppPagesPage;
-import sber.spasibo.pages.PartnersPage;
+import sber.spasibo.pages.*;
 
 import static com.codeborne.selenide.Selenide.open;
 
@@ -14,6 +11,7 @@ public class TestBase {
     GiftCertificatePage giftCertificatePage = new GiftCertificatePage();
     MobileAppPagesPage mobileAppPagesPage = new MobileAppPagesPage();
     PartnersPage partnersPage = new PartnersPage();
+    TravelPage travelPage = new TravelPage();
 
     @BeforeAll
     static void beforeAll() {

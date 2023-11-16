@@ -24,7 +24,7 @@ public class CouponsPage {
     }
 
     public CouponsPage verifyCouponsOffers() {
-        offersCount.shouldHave(text("46 предложений"));
+        offersCount.shouldHave(text("56 предложений"));
         return this;
     }
 
