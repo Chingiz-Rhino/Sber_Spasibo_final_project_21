@@ -3,34 +3,44 @@ package sber.spasibo.tests.web;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
-public class TravelTest  extends TestBase{
+public class SberPrimeTest extends TestBase{
     @Test
-    @DisplayName("Go to travel page test")
+    @DisplayName("Go to Sber Prime page test")
     void selectTravelPageTest() {
         step("Open main page", () -> {
             openWebSite();
         });
-        step("Open Travel page", () -> {
-            travelPage.goToTravelPage();
+        step("Open Sber Prime page", () -> {
+            sberPrimePage.goToSberPrimePage();
+            sberPrimePage.chooseCity();
         });
         step("Verify result", ()->{
-            travelPage.headerOfTravelPage();
+            sberPrimePage.headerOfTravelPage();
         });
 
     }
 
     @Test
-    @DisplayName("Select the train tickets tab test")
+    @DisplayName("Select the 'Okko' tab test")
     void selectTrainTest() {
-        step("", () -> {
+        step("Open main page", () -> {
+            openWebSite();
+        });
+        step("Open SberPrime page", () -> {
+            sberPrimePage.goToSberPrimePage();
+            sberPrimePage.chooseCity();
+        });
+        step("Select 'Okko' page", ()->{
+            sberPrimePage.cookiesAcceptTap();
+            sberPrimePage.scrollPage();
+            sleep(3000);
         });
         step("", () -> {
-        });
-        step("", ()->{
-        });
-        step("", () -> {
+
+
         });
     }
 
