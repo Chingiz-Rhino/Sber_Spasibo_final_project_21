@@ -11,7 +11,6 @@ public class TestBase {
     GiftCertificatePage giftCertificatePage = new GiftCertificatePage();
     MobileAppPagesPage mobileAppPagesPage = new MobileAppPagesPage();
     PartnersPage partnersPage = new PartnersPage();
-    SberPrimePage sberPrimePage = new SberPrimePage();
 
     @BeforeAll
     static void beforeAll() {
