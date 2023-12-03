@@ -59,7 +59,7 @@ public class MobileAppPageTest extends TestBase {
     @Tag("Smoke")
     @Tag("MobileApp")
     @Test
-    @DisplayName("Testing information about Transfer bonus on page MobileApp")
+    @DisplayName("Testing information about Main page on page MobileApp")
     void informationAboutTransferBonusTest() {
         step("Open main page", () -> {
             openWebSite();
@@ -68,7 +68,6 @@ public class MobileAppPageTest extends TestBase {
             mobileAppPagesPage.chooseCity();
             mobileAppPagesPage.openMobileAppPage();
             mobileAppPagesPage.scrollPage2();
-            sleep(3000);
         });
     }
 

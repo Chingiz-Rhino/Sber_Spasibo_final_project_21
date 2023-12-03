@@ -25,7 +25,7 @@ public class TestBase {
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion");
 
-        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+//        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
         Configuration.remote = System.getProperty("remoteUrl");
         Configuration.holdBrowserOpen = false;
         DesiredCapabilities capabilities = new DesiredCapabilities();
