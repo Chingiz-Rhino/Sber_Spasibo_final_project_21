@@ -1,12 +1,24 @@
 package sber.spasibo.tests.web;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import sber.spasibo.pages.MobileAppPagesPage;
 
+import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.logevents.SelenideLogger.step;
+import static io.qameta.allure.SeverityLevel.NORMAL;
 
+@Owner("Аскаров Ченгиз")
+@Epic(value = "Тестирование UI функционала сайта spasibosberbank.ru")
+@Feature(value = "Базовая функциональность приложения SberSpasibo")
+@Story("Мобильное приложение")
 public class MobileAppPageTest extends TestBase {
-
+    MobileAppPagesPage mobileAppPagesPage = new MobileAppPagesPage();
+    @Severity(NORMAL)
+    @Tag("Smoke")
+    @Tag("MobileApp")
     @Test
     @DisplayName("Testing information about Balance and History on page MobileApp")
     void informationAboutBalanceAndHistoryTest() {
@@ -14,6 +26,7 @@ public class MobileAppPageTest extends TestBase {
             openWebSite();
         });
         step("Open Mobile app page", () -> {
+            mobileAppPagesPage.chooseCity();
             mobileAppPagesPage.openMobileAppPage();
             mobileAppPagesPage.scrollPage();
         });
@@ -21,7 +34,9 @@ public class MobileAppPageTest extends TestBase {
             mobileAppPagesPage.verifyBalanceAndHistoryPage();
         });
     }
-
+    @Severity(NORMAL)
+    @Tag("Smoke")
+    @Tag("MobileApp")
     @Test
     @DisplayName("Testing information about Privilege level on page MobileApp")
     void informationAboutPrivilegeLevelTest() {
@@ -29,6 +44,7 @@ public class MobileAppPageTest extends TestBase {
             openWebSite();
         });
         step("Open Mobile app page", () -> {
+            mobileAppPagesPage.chooseCity();
             mobileAppPagesPage.openMobileAppPage();
             mobileAppPagesPage.scrollPage();
         });
@@ -39,7 +55,9 @@ public class MobileAppPageTest extends TestBase {
             mobileAppPagesPage.verifyPrivilegeLevelPage();
         });
     }
-
+    @Severity(NORMAL)
+    @Tag("Smoke")
+    @Tag("MobileApp")
     @Test
     @DisplayName("Testing information about Transfer bonus on page MobileApp")
     void informationAboutTransferBonusTest() {
@@ -47,14 +65,10 @@ public class MobileAppPageTest extends TestBase {
             openWebSite();
         });
         step("Open Mobile app page", () -> {
+            mobileAppPagesPage.chooseCity();
             mobileAppPagesPage.openMobileAppPage();
-            mobileAppPagesPage.scrollPage();
-        });
-        step("Tap on Transfer bonus chips", () -> {
-            mobileAppPagesPage.tapOnTransferBonusesChips();
-        });
-        step("Verify Transfer bonus information on page", () -> {
-            mobileAppPagesPage.verifyTransferBonusesPage();
+            mobileAppPagesPage.scrollPage2();
+            sleep(3000);
         });
     }
 

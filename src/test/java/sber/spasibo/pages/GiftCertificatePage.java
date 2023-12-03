@@ -3,13 +3,14 @@ package sber.spasibo.pages;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class GiftCertificatePage {
     SelenideElement
             giftCertificatePageTap = $("[href='/certificates/list']"),
-            headerOfGiftCertificatePage = $(".page__content-title"),
-            cityButton = $("[aria-label='Оставить выбранным город Москва']"),
+            headerOfGiftCertificatePage = $(".certificates-list-page__title ui-page-h1"),
+            cityButton = $(".app-button__inner"),
             backToMainPageTap = $(".bread__item"),
             chooseSbersEcosystemCB = $(".app-checkbox__text"),
             countOfGiftCertificate = $(".certificates-list-page__count");
@@ -26,12 +27,12 @@ public class GiftCertificatePage {
     }
 
     public GiftCertificatePage verifyGiftCertificatePage() {
-        headerOfGiftCertificatePage.shouldHave(text("Подарочные сертификаты"));
+        headerOfGiftCertificatePage.$(byText("Подарочные сертификаты")).shouldHave(text("Подарочные сертификаты")).click();
         return this;
     }
 
     public GiftCertificatePage chooseCity() {
-        cityButton.click();
+        cityButton.shouldHave(text("Всё верно")).click();
         return this;
     }
 

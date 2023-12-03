@@ -8,13 +8,20 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class MobileAppPagesPage {
     SelenideElement
-            mobileAppPageTap = $("[href='/landings/app']"),
-            headerOfChips = $(".appInfo__items"),
-            chipsTaps = $(".app-buttons-wrapper");
+            mobileAppPageTap = $("[href='/mobile-app']"),
+            headerOfChips = $(".mobile-app-tabs__content"),
+            chipsTaps = $(".app-buttons-wrapper"),
+            mobileAppMainPage = $(".mobile-app-cards__text"),
+            cityButton = $(".app-button__inner");
 
 
     public MobileAppPagesPage scrollPage() {
-        $(".appInfo").scrollTo();
+        $(".mobile-app-tabs__images").scrollTo();
+        return this;
+    }
+
+    public MobileAppPagesPage scrollPage2() {
+        $(".mobile-app-cards__card-wrapper").scrollTo();
         return this;
     }
 
@@ -29,7 +36,7 @@ public class MobileAppPagesPage {
     }
 
     public MobileAppPagesPage tapOnPrivilegeLevelChips() {
-        chipsTaps.$(byText("Уровень привилегий")).shouldHave(text("Уровень привилегий")).click();
+        chipsTaps.shouldHave(text("Уровень привилегий")).click();
         return this;
     }
 
@@ -38,13 +45,13 @@ public class MobileAppPagesPage {
         return this;
     }
 
-    public MobileAppPagesPage tapOnTransferBonusesChips() {
-        chipsTaps.$(byText("Перевод бонусов")).shouldHave(text("Перевод бонусов")).click();
+    public MobileAppPagesPage verifyMobileAppMainPage(){
+        mobileAppMainPage.$(byText(" И это ещё не всё ")).shouldHave(text(" И это ещё не всё "));
         return this;
     }
 
-    public MobileAppPagesPage verifyTransferBonusesPage() {
-        headerOfChips.shouldHave(text("Пользуйтесь выгодой"));
+    public MobileAppPagesPage chooseCity() {
+        cityButton.shouldHave(text("Всё верно")).click();
         return this;
     }
 
