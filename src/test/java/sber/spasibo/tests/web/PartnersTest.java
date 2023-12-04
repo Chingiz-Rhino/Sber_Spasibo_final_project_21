@@ -21,9 +21,6 @@ public class PartnersTest extends TestBase {
     @Test
     @DisplayName("Testing the tab selection all partners")
     void selectAllPartnersTest() {
-        step("Open main page", () -> {
-            openWebSite();
-        });
         step("Open Partners and actions page", () -> {
             partnersPage.openPartnersPage();
         });
@@ -40,9 +37,6 @@ public class PartnersTest extends TestBase {
     @Test
     @DisplayName("Testing accumulating partners count")
     void selectCheckBoxAccumulateTest() {
-        step("Open main page", () -> {
-            openWebSite();
-        });
         step("Open Partners and actions page", () -> {
             partnersPage.openPartnersPage();
         });

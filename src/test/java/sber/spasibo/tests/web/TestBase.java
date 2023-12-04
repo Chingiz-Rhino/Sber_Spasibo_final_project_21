@@ -12,12 +12,12 @@ import sber.spasibo.helpers.Attach;
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
-import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
+        Configuration.baseUrl = "https://spasibosberbank.ru";
         Configuration.pageLoadStrategy = "eager";
         Configuration.browserSize = "1920x1080";
 
@@ -49,10 +49,5 @@ public class TestBase {
         Attach.addVideo();
 
         closeWebDriver();
-    }
-
-    public TestBase openWebSite() {
-        open("https://spasibosberbank.ru");
-        return this;
     }
 }

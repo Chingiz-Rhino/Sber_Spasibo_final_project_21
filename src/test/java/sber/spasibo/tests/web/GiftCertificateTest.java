@@ -4,9 +4,14 @@ import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import sber.spasibo.pages.GiftCertificatePage;
 
-import static com.codeborne.selenide.Selenide.sleep;
+
+import java.util.stream.Stream;
+
 import static com.codeborne.selenide.logevents.SelenideLogger.step;
 import static io.qameta.allure.SeverityLevel.NORMAL;
 
@@ -22,9 +27,6 @@ public class GiftCertificateTest extends TestBase {
     @Test
     @DisplayName("Testing of Gift Certificate page opening")
     void giftCertificateOpenTest() {
-        step("Open main page", () -> {
-            openWebSite();
-        });
         step("Open Gift Certificate page", () -> {
             giftCertificatePage.chooseCity();
             giftCertificatePage.openGiftCertificatePage();
@@ -40,9 +42,6 @@ public class GiftCertificateTest extends TestBase {
     @Test
     @DisplayName("Testing Back from Gift Certificate page to main")
     void backToMainPageFromGiftCertificatePage() {
-        step("Open main page", () -> {
-            openWebSite();
-        });
         step("Open Gift Certificate page", () -> {
             giftCertificatePage.openGiftCertificatePage();
         });
@@ -53,12 +52,10 @@ public class GiftCertificateTest extends TestBase {
     @Severity(NORMAL)
     @Tag("Smoke")
     @Tag("GiftCertificate")
-    @Test
     @DisplayName("Testing Chose Sbers Ecosystem category")
+    @ParameterizedTest
+    @MethodSource("provideEcosystemCategories")
     void chooseSbersEcosystemCategory() {
-        step("Open main page", () -> {
-            openWebSite();
-        });
         step("Open Gift Certificate page", () -> {
             giftCertificatePage.openGiftCertificatePage();
         });
@@ -68,7 +65,13 @@ public class GiftCertificateTest extends TestBase {
         });
         step("Verify selected category", () -> {
             giftCertificatePage.verifySersEcosystemCategories();
-            sleep(3000);
         });
+    }
+    private static Stream<Arguments> provideEcosystemCategories() {
+        return Stream.of(
+                Arguments.of("Food Delivery"),
+                Arguments.of("Travel"),
+                Arguments.of("Entertainment")
+        );
     }
 }

@@ -22,9 +22,6 @@ public class MobileAppPageTest extends TestBase {
     @Test
     @DisplayName("Testing information about Balance and History on page MobileApp")
     void informationAboutBalanceAndHistoryTest() {
-        step("Open main page", () -> {
-            openWebSite();
-        });
         step("Open Mobile app page", () -> {
             mobileAppPagesPage.chooseCity();
             mobileAppPagesPage.openMobileAppPage();
@@ -40,9 +37,6 @@ public class MobileAppPageTest extends TestBase {
     @Test
     @DisplayName("Testing information about Privilege level on page MobileApp")
     void informationAboutPrivilegeLevelTest() {
-        step("Open main page", () -> {
-            openWebSite();
-        });
         step("Open Mobile app page", () -> {
             mobileAppPagesPage.chooseCity();
             mobileAppPagesPage.openMobileAppPage();
@@ -61,9 +55,6 @@ public class MobileAppPageTest extends TestBase {
     @Test
     @DisplayName("Testing information about Main page on page MobileApp")
     void informationAboutTransferBonusTest() {
-        step("Open main page", () -> {
-            openWebSite();
-        });
         step("Open Mobile app page", () -> {
             mobileAppPagesPage.chooseCity();
             mobileAppPagesPage.openMobileAppPage();
