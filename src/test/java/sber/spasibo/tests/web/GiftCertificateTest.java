@@ -27,6 +27,9 @@ public class GiftCertificateTest extends TestBase {
     @Test
     @DisplayName("Testing of Gift Certificate page opening")
     void giftCertificateOpenTest() {
+        step("Open Website page", () -> {
+            openWebSite();
+        });
         step("Open Gift Certificate page", () -> {
             giftCertificatePage.chooseCity();
             giftCertificatePage.openGiftCertificatePage();
@@ -41,7 +44,10 @@ public class GiftCertificateTest extends TestBase {
     @Tag("GiftCertificate")
     @Test
     @DisplayName("Testing Back from Gift Certificate page to main")
-    void backToMainPageFromGiftCertificatePage() {
+    void backToMainPageFromGiftCertificatePageTest() {
+        step("Open Website page", () -> {
+            openWebSite();
+        });
         step("Open Gift Certificate page", () -> {
             giftCertificatePage.openGiftCertificatePage();
         });
@@ -55,7 +61,10 @@ public class GiftCertificateTest extends TestBase {
     @DisplayName("Testing Chose Sbers Ecosystem category")
     @ParameterizedTest
     @MethodSource("provideEcosystemCategories")
-    void chooseSbersEcosystemCategory() {
+    void chooseSberEcosystemCategoryTest() {
+        step("Open Website page", () -> {
+            openWebSite();
+        });
         step("Open Gift Certificate page", () -> {
             giftCertificatePage.openGiftCertificatePage();
         });

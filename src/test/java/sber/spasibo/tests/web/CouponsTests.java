@@ -1,5 +1,6 @@
 package sber.spasibo.tests.web;
 
+import com.codeborne.selenide.Selenide;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -23,7 +24,9 @@ public class CouponsTests extends TestBase {
     @Test
     @DisplayName("Testing of coupons page opening")
     void couponsOpenTest() {
-
+        step("Open Website page", () -> {
+            openWebSite();
+        });
         step("Open Coupons page", () -> {
             couponsPage.chooseCity();
             couponsPage.openCouponPage();
@@ -37,7 +40,10 @@ public class CouponsTests extends TestBase {
     @Tag("Coupons")
     @Test
     @DisplayName("Checking the number of offers on a page")
-    void couponsOffersOnPage() {
+    void couponsOffersOnPageTest() {
+        step("Open Website page", () -> {
+            openWebSite();
+        });
         step("Open Coupons page", () -> {
             couponsPage.chooseCity();
             couponsPage.openCouponPage();
@@ -51,7 +57,10 @@ public class CouponsTests extends TestBase {
     @Tag("Coupons")
     @Test
     @DisplayName("Checking the checkbox of cafes and restaurants")
-    void couponsCafeAndRestaurantsCB() {
+    void couponsCafeAndRestaurantsCBTest() {
+        step("Open Website page", () -> {
+            openWebSite();
+        });
         step("Open Coupons page", () -> {
             couponsPage.chooseCity();
             couponsPage.openCouponPage();

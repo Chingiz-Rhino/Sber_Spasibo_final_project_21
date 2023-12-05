@@ -12,6 +12,7 @@ import sber.spasibo.helpers.Attach;
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
@@ -49,5 +50,10 @@ public class TestBase {
         Attach.addVideo();
 
         closeWebDriver();
+    }
+
+    public TestBase openWebSite(){
+        open("");
+        return this;
     }
 }
